@@ -4,9 +4,8 @@ function validateForm() {
     var password = document.getElementById('password').value;
     var confirmPassword = document.getElementById('confirmPassword').value;
 
-    // Basic validations
-    if (username === "" || mobile === "" || password === "" || confirmPassword === "") {
-        alert("All fields must be filled out");
+    if (username.trim() === '' || mobile.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
+        alert("Please fill in all the required fields.");
         return false;
     }
 
