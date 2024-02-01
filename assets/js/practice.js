@@ -1,13 +1,19 @@
 function validateForm() {
-    var username = document.getElementById("username")
-    var mobile = document.getElementById("mobile")
-    var password = document.getElementById("password")
-    var confirmPassword = document.getElementById("confirmPassword")
+    var username = document.getElementById('username').value;
+    var mobile = document.getElementById('mobile').value;
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
 
-    // Perform your validation checks here
+    // Basic validations
     if (username === "" || mobile === "" || password === "" || confirmPassword === "") {
-        alert("All fields are required");
-        return;
+        alert("All fields must be filled out");
+        return false;
     }
 
+    // Password match validation
+    if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+    }
+    return true;
 }
